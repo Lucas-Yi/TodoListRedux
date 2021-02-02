@@ -1,14 +1,9 @@
-import React, {useState} from "react"
-import AddTodo from "./AddTodo.js"
-import VisibleFilters from "./VisibleFilters.js"
-
+import React from "react"
+import AddTodo from "./components/AddTodo.js"
+import TodoList from "./components/TodoList.js"
+import VisibleFilters from "./components/VisibilityFilters.js"
 
 export default function TodoApp() {
-  const [todoList, setTodoList] = useState([])
-
-  const addToList = (todoItem, id) =>
-    setTodoList([...todoList, {COMPLETE: false, context: todoItem, id:id++}])
-
   /* 3 components
     AddTodo
     TodoList
@@ -16,9 +11,9 @@ export default function TodoApp() {
   */
   return <>
     <h1>Todo List</h1>
-    <AddTodo addToList={addToList}/>
-    {/*<TodoList todoList={todoList}/>*/}
-    <VisibleFilters todoList={todoList}/>
+    <AddTodo />
+    <TodoList />
+    <VisibleFilters />
   </>
   
 }
