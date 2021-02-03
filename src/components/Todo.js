@@ -2,8 +2,14 @@ import React from "react"
 import { toggleTodo } from "../redux/actions";
 import { connect } from "react-redux"
 
-export const Todo = ({todoItem, toggleTodo})=>{
-    return <h2 onClick={()=>toggleTodo(todoItem.id)}>{todoItem.content}</h2>
+const Todo = ({todo, toggleTodo})=>{
+    console.log("re-rendering TodoItem...")
+    return (<li onClick={()=>toggleTodo(todo.id)}>
+                {  
+                     /*todo && (todo.complete ? "👌" : "👋") + " " + todo.content*/
+                     todo.content
+                }
+            </li>)
 }
 
 export default connect(null, { toggleTodo })(Todo)

@@ -3,7 +3,7 @@ import { addTodo } from "../redux/actions"
 import { connect } from "react-redux"
 
 
-export function AddTodo({ addTodo }){
+const AddTodo = ({ addTodo })=>{
     const [todoItem, setTodoItem] = useState("")
 
     const handleInputChange = (e)=>{
